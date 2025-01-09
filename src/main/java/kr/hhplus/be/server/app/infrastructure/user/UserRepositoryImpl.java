@@ -16,4 +16,9 @@ public class UserRepositoryImpl implements UserRepository {
         return jpaRepository.findById(id)
                 .orElseThrow(() -> new NullPointerException("해당 id의 유저가 존재하지 않습니다."));
     }
+
+    @Override
+    public void save(Users user) {
+        jpaRepository.save(user);
+    }
 }
