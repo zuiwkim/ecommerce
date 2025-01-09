@@ -16,4 +16,11 @@ public class PointRepositoryImpl implements PointRepository {
         return jpaRepository.findByUserId(userId)
                 .orElseThrow(() -> new NullPointerException("해당 유저의 포인트를 찾을 수 없습니다."));
     }
+
+    @Override
+    public void save(Point point) {
+        jpaRepository.save(point);
+    }
+
+
 }
